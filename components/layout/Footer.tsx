@@ -35,15 +35,15 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Contato</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center space-x-2 hover-scale transition-transform duration-300">
-                <Phone className="h-4 w-4 text-amber-400" />
+                <Phone className="h-4 w-4 text-white" />
                 <span className="text-gray-300">(11) 9999-9999</span>
               </li>
               <li className="flex items-center space-x-2 hover-scale transition-transform duration-300">
-                <Mail className="h-4 w-4 text-amber-400" />
+                <Mail className="h-4 w-4 text-white" />
                 <span className="text-gray-300">contato@juniorpecas.com.br</span>
               </li>
               <li className="flex items-start space-x-2 hover-scale transition-transform duration-300">
-                <MapPin className="h-4 w-4 text-amber-400 mt-0.5" />
+                <MapPin className="h-4 w-4 text-white mt-0.5" />
                 <span className="text-gray-300">Rua das Oficinas, 123<br />São Paulo - SP</span>
               </li>
             </ul>
@@ -53,7 +53,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Horário de Funcionamento</h3>
             <div className="flex items-start space-x-2 mb-4 hover-scale transition-transform duration-300">
-              <Clock className="h-4 w-4 text-amber-400 mt-0.5" />
+              <Clock className="h-4 w-4 text-white mt-0.5" />
               <div className="text-sm text-gray-300">
                 <p>Segunda a Sexta: 8h às 18h</p>
                 <p>Sábado: 8h às 14h</p>
@@ -62,10 +62,10 @@ export default function Footer() {
             </div>
             
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-amber-400 transition-all duration-300 hover-scale animate-float">
+              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover-scale animate-float">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-amber-400 transition-all duration-300 hover-scale animate-float" style={{animationDelay: '1s'}}>
+              <a href="#" className="text-gray-300 hover:text-white transition-all duration-300 hover-scale animate-float" style={{animationDelay: '1s'}}>
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
