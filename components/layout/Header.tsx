@@ -17,11 +17,11 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#003366] text-white shadow-lg sticky top-0 z-50">
+    <header className="gradient-primary text-white shadow-xl sticky top-0 z-50 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex items-center space-x-2">
-            <Car className="h-8 w-8 text-white" />
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center space-x-2 hover-scale">
+            <Car className="h-8 w-8 text-white animate-float" />
             <span className="font-bold text-xl">JUNIOR Peças & Serviços</span>
           </Link>
         </div>
@@ -41,7 +41,7 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-white hover:text-[#1E90FF] transition-colors duration-200"
+              className="text-sm font-semibold leading-6 text-white hover:text-amber-300 transition-all duration-300 hover:scale-110"
             >
               {item.name}
             </Link>
@@ -51,7 +51,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button 
             asChild
-            className="bg-gradient-to-r from-[#0093e9] to-[#1E90FF] hover:from-[#007acc] hover:to-[#1874CD] text-white border-0 font-semibold px-6 py-2 transition-all duration-300"
+            className="gradient-accent hover-gradient-shift text-white border-0 font-semibold px-6 py-2 transition-all duration-300 hover-lift animate-glow"
           >
             <Link href="/contato">
               Solicitar Orçamento
@@ -64,7 +64,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden">
           <div className="fixed inset-0 z-50" />
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#003366] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto gradient-primary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5 flex items-center space-x-2">
                 <Car className="h-8 w-8 text-white" />
@@ -95,7 +95,7 @@ export default function Header() {
                 <div className="py-6">
                   <Button 
                     asChild
-                    className="w-full bg-gradient-to-r from-[#0093e9] to-[#1E90FF] hover:from-[#007acc] hover:to-[#1874CD] text-white border-0 font-semibold"
+                    className="w-full gradient-accent hover-gradient-shift text-white border-0 font-semibold hover-scale"
                   >
                     <Link href="/contato" onClick={() => setMobileMenuOpen(false)}>
                       Solicitar Orçamento
