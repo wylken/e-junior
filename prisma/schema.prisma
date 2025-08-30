@@ -1,69 +1,33 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
-enum Role {
-  ADMIN
-  CLIENT
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String
+  content     String
+  image       String
+  author      String   @default("JUNIOR Oficina")
+  category    String
+  tags        String   // JSON string array
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
-enum ConfigType {
-  URL
-  TEXT
-  NUMBER
-  BOOLEAN
-  JSON
-}
-
-model User {
+model Contact {
   id        String   @id @default(cuid())
-  email     String   @unique
   name      String
-  password  String
+  email     String
   phone     String?
-  photo     String?
-  role      Role     @default(CLIENT)
-  isActive  Boolean  @default(true)
+  message   String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model Configuration {
-  id          String     @id @default(cuid())
-  key         String     @unique
-  value       String
-  type        ConfigType
-  description String?
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-}
-
-model RefreshToken {
-  id        String   @id @default(cuid())
-  token     String   @unique
-  userId    String
-  expiresAt DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model PasswordResetToken {
-  id        String   @id @default(cuid())
-  token     String   @unique
-  userId    String
-  expiresAt DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  status    String   @default("new") // new, read, responded
 }
